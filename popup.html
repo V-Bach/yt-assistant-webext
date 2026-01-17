@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { 
+            width: 350px; 
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-image: url('assets/sussybaka.png'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 500px;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(1px); 
+            z-index: 0;
+        }
+
+        .header {
+            background-color: rgba(255, 0, 0, 0.9); 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h2 { margin: 0; font-size: 18px; }
+
+        .container { 
+            padding: 20px; 
+            position: relative; 
+            z-index: 1; 
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.6); 
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .label { font-weight: bold; color: #444; font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .value { display: block; color: #000; font-size: 14px; margin-bottom: 12px; word-wrap: break-word; font-weight: 500; }
+
+        textarea {
+            width: 100%; height: 150px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px;
+            padding: 10px; font-size: 13px; resize: none; background-color: rgba(255, 255, 255, 0.5);
+            box-sizing: border-box; outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        #btn {
+            width: 100%; 
+            padding: 14px; 
+            background-color: #f60505; 
+            color: white;
+            border: none; 
+            border-radius: 25px; 
+            font-size: 13px; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer; 
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(6, 95, 212, 0.3);
+        }
+
+        #btn:hover { 
+            background-color: #054fb1; 
+            transform: translateY(-1px);
+        }
+
+        #btn-dashboard {
+            width: 100%; 
+            padding: 12px; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            color: #040000;
+            border: 2px solid #f0f3f7; 
+            border-radius: 25px; 
+            font-size: 13px; 
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer; 
+            transition: all 0.2s ease;
+        }
+
+        #btn-dashboard:hover { 
+            background-color: #065fd4;
+            color: white;
+        }
+
+        .footer { text-align: center; font-size: 10px; color: #666; margin-top: 20px; position: relative; z-index: 1; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>YT-learning-assistant</h2>
+    </div>
+
+    <div class="container">
+        <div class="info-card">
+            <span class="label">Video Title</span>
+            <span id="title" class="value">Chưa có dữ liệu...</span>
+
+            <span class="label">Video ID</span>
+            <span id="vid" class="value">---</span>
+
+            <span class="label">Transcript</span>
+            <textarea id="transcript-box" placeholder="Mở bảng transcript trên YouTube rồi nhấn nút bên dưới..."></textarea>
+        </div>
+
+        <div class="button-group">
+            <button id="btn">LẤY DỮ LIỆU & PHÂN TÍCH</button>
+            <button id="btn-dashboard">MỞ KHO KIẾN THỨC</button>
+        </div>
+        
+        <div class="footer">
+            Version 1.0 • Open Access Mode
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
